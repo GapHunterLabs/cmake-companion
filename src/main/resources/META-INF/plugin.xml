@@ -1,0 +1,34 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>dev.gaphunter.cmakecompanion</id>
+    <name>CMake Companion</name>
+    <vendor>Gap Hunter Labs</vendor>
+    <description><![CDATA[
+        <p>Syntax highlighting, known-command highlighting, and an
+        unmatched-parenthesis inspection for CMakeLists.txt/*.cmake files --
+        opt-in by filename/content, not by hijacking every text file on
+        disk. A real paid competitor's reviewers reported the IDE becoming
+        unresponsive after an update ("The new version makes the IDE
+        unresponsive and is really slow") and repeated "License not found"
+        failures after reactivation; this plugin runs no license checks and
+        no background licensing calls at all.</p>
+        <p>Free, forever, for this feature set. No license nags, no
+        upsell notifications on IDE startup, no telemetry.</p>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="CMake" implementationClass="dev.gaphunter.cmakecompanion.lang.CMakeFileType"
+                   fieldName="INSTANCE" language="CMake" order="first"/>
+        <fileTypeDetector implementation="dev.gaphunter.cmakecompanion.detection.CMakeFileTypeOverrider"/>
+        <lang.parserDefinition language="CMake"
+                                implementationClass="dev.gaphunter.cmakecompanion.lang.CMakeParserDefinition"/>
+        <lang.syntaxHighlighterFactory language="CMake"
+                                        implementationClass="dev.gaphunter.cmakecompanion.lang.CMakeSyntaxHighlighterFactory"/>
+        <editorHighlighterProvider filetype="CMake"
+                                    implementationClass="dev.gaphunter.cmakecompanion.lang.CMakeEditorHighlighterProvider"/>
+        <annotator language="CMake" implementationClass="dev.gaphunter.cmakecompanion.highlighting.CMakeCommandAnnotator"/>
+        <annotator language="CMake" implementationClass="dev.gaphunter.cmakecompanion.highlighting.CMakeParenAnnotator"/>
+    </extensions>
+</idea-plugin>
