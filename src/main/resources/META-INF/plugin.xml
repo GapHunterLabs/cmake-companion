@@ -19,6 +19,7 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup id="CMake Companion" displayType="BALLOON"/>
         <fileType name="CMake" implementationClass="dev.gaphunter.cmakecompanion.lang.CMakeFileType"
                    fieldName="INSTANCE" language="CMake" order="first"/>
         <fileTypeDetector implementation="dev.gaphunter.cmakecompanion.detection.CMakeFileTypeOverrider"/>
