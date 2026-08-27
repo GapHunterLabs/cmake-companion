@@ -42,7 +42,7 @@ business model on top of real bugs. Verbatim reviewer complaints:
   `nginx-companion` needed a real 5-round investigation to discover that a
   bundled `FileTypeIdentifiableByVirtualFile` implementation (e.g.
   TextMate) always wins a naive `FileTypeDetector`-only registration,
-  regardless of specificity (see `SDK_GOTCHAS.md` SS10). Applied here from
+  regardless of specificity. Applied here from
   the first version instead of rediscovering the same bug.
 - **The "unmatched parenthesis" inspection is a pure function over the
   lexer's token stream** (`CMakeParenChecker`), not a PSI walk -- directly

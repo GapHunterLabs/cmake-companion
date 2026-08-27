@@ -10,8 +10,8 @@ import javax.swing.Icon
 /**
  * Implements [FileTypeIdentifiableByVirtualFile] in addition to being a
  * plain [LanguageFileType] -- proactively applying the fix
- * nginx-companion needed after a real 5-round investigation
- * (SDK_GOTCHAS.md SS10): a bundled `FileTypeIdentifiableByVirtualFile`
+ * nginx-companion needed after a real 5-round investigation: a bundled
+ * `FileTypeIdentifiableByVirtualFile`
  * (e.g. TextMate, if it ships a CMake grammar) is consulted first and
  * wins any tie by registration order alone, regardless of specificity.
  * Implementing this interface AND `order="first"` on the `<fileType>`
