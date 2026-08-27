@@ -7,6 +7,7 @@ import com.intellij.openapi.util.TextRange
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiFile
 import dev.gaphunter.cmakecompanion.inspection.CMakeParenChecker
+import dev.gaphunter.cmakecompanion.review.ReviewPrompt
 
 /**
  * Runs [CMakeParenChecker] once per file (guarded on `element is PsiFile`,
@@ -21,6 +22,8 @@ class CMakeParenAnnotator : Annotator {
             holder.newAnnotation(HighlightSeverity.ERROR, issue.message)
                 .range(TextRange(issue.offset, issue.offset + issue.length))
                 .create()
+            val lineNumber = element.viewProvider.document?.getLineNumber(issue.offset)?.plus(1) ?: 0
+            ReviewPrompt.recordHit(element.project, "${element.virtualFile?.path}:$lineNumber:${issue.message}")
         }
     }
 }
