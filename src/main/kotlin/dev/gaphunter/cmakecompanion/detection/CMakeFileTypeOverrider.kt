@@ -13,9 +13,9 @@ import java.nio.charset.StandardCharsets
  * primary, higher-priority filename+content check). Registered as a
  * [FileTypeRegistry.FileTypeDetector] (lowest-priority tier) purely for
  * defense in depth -- reads bytes via [ByteSequence], never
- * `VirtualFile.contentsToByteArray()` (see SDK_GOTCHAS.md SS11 for why that
- * specific method causes real infinite recursion in a FileTypeOverrider;
- * this class is a FileTypeDetector, not a FileTypeOverrider, but the same
+ * `VirtualFile.contentsToByteArray()` (that specific method causes real
+ * infinite recursion in a FileTypeOverrider; this class is a
+ * FileTypeDetector, not a FileTypeOverrider, but the same
  * "never re-ask the platform what a file's FileType is" discipline
  * applies).
  */
