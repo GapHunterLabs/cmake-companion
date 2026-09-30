@@ -3,6 +3,12 @@
 Syntax highlighting, known-command highlighting, and an unmatched-paren
 inspection for `CMakeLists.txt`/`*.cmake` files.
 
+![CMake Companion: CMake highlighting and paren errors, with no license to activate](docs/media/hero.gif)
+
+Each feature on its own:
+[Highlighting](docs/media/01-highlighting.gif) ·
+[Paren errors](docs/media/02-paren-errors.gif)
+
 ## Why it exists
 
 **CMake Plus** (JetBrains Marketplace id 12869), 57,780 downloads, paid
