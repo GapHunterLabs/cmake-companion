@@ -34,8 +34,7 @@ business model on top of real bugs. Verbatim reviewer complaints:
   notification, no background licensing calls -- there is nothing here
   that can fail with "License not found" or "Access Denied" because there
   is no license gate to fail.
-- **Hand-rolled lexer** (`CMakeLexer`), same pattern already proven twice
-  in this workspace (`nginx-companion`, `graphql-companion`): CMake's
+- **Hand-rolled lexer** (`CMakeLexer`), the same pattern I already use in `nginx-companion` and `graphql-companion`: CMake's
   syntax is small and stable enough that a manual scanner is simpler than
   wiring up a full grammar for it, and a small, well-tested lexer is much
   less likely to cause the "unresponsive and slow" complaint above than
